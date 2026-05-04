@@ -42,6 +42,7 @@ header {
     font-weight: 700;
     color: var(--text-main);
     letter-spacing: -1px;
+    text-decoration: none;
 }
 
 .logo span {
@@ -61,8 +62,8 @@ nav a:hover {
     color: var(--primary);
 }
 
-/* Botón Nav Sofisticado */
-.btn-cita-nav {
+/* Botón iniciar sesion */
+.btn-crear-cuenta {
     background: transparent;
     color: var(--primary);
     padding: 10px 24px;
@@ -71,9 +72,24 @@ nav a:hover {
     font-weight: 600;
 }
 
-.btn-cita-nav:hover {
+.btn-crear-cuenta:hover {
     background: var(--primary);
     color: white;
+}
+
+/* Botón crear cuenta*/
+.btn-iniciar-sesion {
+    background: var(--primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 2px; 
+    border: 1px solid var(--primary);
+    font-weight: 600;
+}
+
+.btn-iniciar-sesion:hover {
+    background: transparent;
+    color: var(--primary);
 }
 
 .btn-submit {
@@ -157,11 +173,11 @@ nav a:hover {
 }
 
 .real-photo {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 2; 
 }

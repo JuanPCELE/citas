@@ -19,12 +19,10 @@
 <body>
 
     <header>
-        <div class="logo">Nails<span>Link</span></div>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Servicios</a>
-            <a href="#agenda" class="btn-cita-nav">Agendar Cita</a>
-        </nav>
+                <a href="{{ url('/') }}" class="logo">Nails<span>Link</span></a>
+
+<x-navbar />
+
     </header>
 
     <section class="hero">
@@ -35,7 +33,7 @@
             <a href="#agenda" class="btn-submit">Ver Disponibilidad</a>
         </div>
         <div class="hero-img-container">
-            <img src="https://placehold.co/500x700/f4eaec/9d687a?text=Foto+de+Uñas"
+<img src="{{ asset('imagenes/unasMain.webp') }}"
                  alt="Manicura premium profesional" class="real-photo">
             <div class="photo-shadow"></div>
         </div>

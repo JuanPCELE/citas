@@ -1,0 +1,292 @@
+:root {
+    --primary: #9d687a; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    height: 100vh;
+}
+
+
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+    width: 10%;
+    background: #ffffff;
+    padding: 16px 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+       box-shadow: 4px 0 12px rgba(0, 0, 0, 0.06);
+    border-right: 0.5px solid #ebebeb;
+
+
+}
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c2c2a;
+    letter-spacing: -1px;
+    text-decoration: none;
+    padding: 8px 0 24px;
+}
+.logo span {
+    color: var(--primary);
+    font-weight: 400;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    color: #727272;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.sidebar-item.active {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    margin: 0 8px;
+    width: calc(100% - 16px);
+}
+.sidebar-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.sidebar-item:hover {
+    color: var(--primary);
+}
+
+.sidebar-item.active:hover {
+
+    color: #fff;
+
+}
+/* ── Main ── */
+.main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 32px;
+     background: #fafafa;
+
+}
+
+.topbar {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.main h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2c2c2a;
+    margin-bottom: 8px;
+}
+
+/* ── Time label ── */
+.time-label {
+    font-size: 11px;
+    color: #888;
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: #e5e5e5;
+}
+
+/* ── Grid de citas ── */
+.citas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+/* ── Tarjeta de cita ── */
+.cita-card {
+    background: #fff;
+    border: 0.5px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.cita-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.cita-name {
+    font-weight: 500;
+    font-size: 13px;
+    color: #2c2c2a;
+}
+
+.cita-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cita-actions svg {
+    width: 13px;
+    height: 13px;
+    color: #888;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.cita-actions svg:hover {
+    opacity: 0.7;
+}
+
+/* ── Badges ── */
+.badge {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.badge-completada {
+    background: #e1f5ee;
+    color: #0f6e56;
+}
+
+.badge-pendiente {
+    background: #faeeda;
+    color: #854f0b;
+}
+
+.badge-cancelada {
+    background: #fcebeb;
+    color: #a32d2d;
+}
+
+/* ── Detalle y footer de la cita ── */
+.cita-detail {
+    font-size: 11px;
+    color: #888;
+    margin: 3px 0;
+}
+
+.cita-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+}
+
+
+/* ── Modal ── */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+.modal-overlay.activo { display: flex; }
+.modal {
+    background: #fff;
+    border-radius: 12px;
+    border: 0.5px solid #e5e5e5;
+    padding: 32px;
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.modal-header h2 { font-size: 18px; font-weight: 600; margin: 0; }
+.modal-subtitulo { font-size: 11px; color: #999; margin: 0 0 2px; }
+.modal-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.modal-acciones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+.btn-cancelar {
+    background: transparent;
+    border: 0.5px solid #ccc;
+    color: #888;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.btn-guardar {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-guardar:hover { background: #8c5d6c; }
+
+/* ── Formulario general ── */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #727272;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 14px;
+    background: #fbfbfc;
+    border: 0.5px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #2c2c2a;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #9d687a;
+    background: white;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
