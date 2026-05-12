@@ -36,3 +36,11 @@ Route::view('/citas', 'citasUsuario');
 Route::view('/historial', 'historialUsuario');
 
 Route::view('/cuenta', 'cuentaUsuario');
+
+Route::get('/admin/servicios', function () {
+    return view('admin.servicios');
+})->name('servicios');
+
+Route::get('/admin/colaboradores', function () {
+    return view('admin.colaboradores');
+})->name('colaboradores');
