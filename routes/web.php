@@ -30,3 +30,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/admin/citas', function () {
     return view('admin.citas');
 })->name('citas');
+
+Route::view('/citas', 'citasUsuario');
+
+Route::view('/historial', 'historialUsuario');
+
+Route::view('/cuenta', 'cuentaUsuario');
