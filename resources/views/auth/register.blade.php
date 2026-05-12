@@ -14,21 +14,33 @@
         <x-navbar />
     </header>
 
-    <section class="booking" >
+    <section class="booking">
         <div class="booking-container">
             <div class="booking-header">
                 <h2>Crear Cuenta</h2>
                 <p>Regístrate para gestionar tus citas fácilmente.</p>
             </div>
-            <form method="POST" action="#">
+
+            <form method="POST" action="{{ route('register') }}">
                 @csrf
+
+                @if ($errors->any())
+                    <div class="alert-error">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <div class="form-group">
                     <label>Nombre Completo</label>
-                    <input type="text" name="name" placeholder="Ej. Alejandra García" required>
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Ej. Alejandra García" required>
                 </div>
                 <div class="form-group">
                     <label>Correo Electrónico</label>
-                    <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+                    <input type="email" name="email" value="{{ old('email') }}" placeholder="correo@ejemplo.com" required>
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>
@@ -38,7 +50,12 @@
                     <label>Confirmar Contraseña</label>
                     <input type="password" name="password_confirmation" placeholder="Repite tu contraseña" required>
                 </div>
+
                 <button type="submit" class="btn-submit full-width">Crear mi Cuenta</button>
+
+                <p style="text-align:center; margin-top:1rem;">
+                    ¿Ya tienes cuenta? <a href="{{ route('login') }}">Inicia sesión</a>
+                </p>
             </form>
         </div>
     </section>
